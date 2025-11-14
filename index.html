@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda OCN-Calzada</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="logo-container">
+    <img src="ocnlogo.png" alt="Logo OCN" class="logo">
+    <h1>Vistete a la moda</h1>
+    </div>
+    <nav>
+    <button id="ver-carrito">🛒 Carrito (<span id="contador">0</span>)</button>
+    <button id="modo-toggle">🌞/🌙</button>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+    <h2>Tu estilo, tu actitud.</h2>
+    <p>Descubrí lo que te hace único.</p>
+    </div>
+</section>
+
+<section class="filtros">
+    <button class="filtro" data-categoria="todos">Todos</button>
+    <button class="filtro" data-categoria="remera">Remeras</button>
+    <button class="filtro" data-categoria="campera">Camperas</button>
+    <button class="filtro" data-categoria="pantalon">Pantalones</button>
+    <button class="filtro" data-categoria="buzo">Buzos</button>
+    <button class="filtro" data-categoria="accesorio">Accesorios</button>
+    <button class="filtro" data-categoria="zapatillas">Zapatillas</button>
+
+
+</section>
+
+<main id="productos"></main>
+
+<footer>
+    <p>© 2025 Tienda Urbana OCN</p>
+    <div class="social">
+    <a href="">📱 WhatsApp</a>
+    <a href="https://www.instagram.com/ocn.calzada/" target="_blank">📸 Instagram</a>
+    <a href="https://maps.app.goo.gl/WfR3SJQFrwKDnXmZ6" target="_blank">📍 Ubicación</a>
+    </div>
+</footer>
+
+<!-- Modal del carrito -->
+<div id="modal-carrito" class="modal oculto">
+    <div class="modal-content">
+    <h3>🛒 Tu carrito</h3>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0</p>
+    <div class="botones-carrito">
+        <button id="vaciar-carrito">Vaciar carrito</button>
+        <button id="cerrar-carrito">Cerrar</button>
+    </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
