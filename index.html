@@ -1,66 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda OCN-Calzada</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCN | Tienda Urbana</title>
+
+    <!-- SEO -->
+    <meta name="description" content="OCN Store - Moda urbana, remeras, pantalones, buzos y más.">
+    <meta name="keywords" content="ropa, tienda, ecommerce, urbana, ocn">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <div class="logo-container">
-    <img src="ocnlogo.png" alt="Logo OCN" class="logo">
-    <h1>Vistete a la moda</h1>
-    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>OCN Store</h1>
+        <button id="modo-toggle">🌙</button>
+    </header>
+
+    <!-- NAV -->
     <nav>
-    <button id="ver-carrito">🛒 Carrito (<span id="contador">0</span>)</button>
-    <button id="modo-toggle">🌞/🌙</button>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos-section">Productos</a></li>
+            <li><a href="#reseñas">Reseñas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><button id="ver-carrito">🛒 Carrito (<span id="contador">0</span>)</button></li>
+        </ul>
     </nav>
-</header>
 
-<section class="hero">
-    <div class="hero-text">
-    <h2>Tu estilo, tu actitud.</h2>
-    <p>Descubrí lo que te hace único.</p>
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
+        <h2>Moda Urbana • Edición Limitada</h2>
+        <p>Ropa diseñada para destacar.</p>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos-section">
+        <h2>Productos</h2>
+
+        <!-- BOTONES DE FILTRO -->
+        <div class="filtros">
+            <button class="filtro" data-categoria="todos">Todos</button>
+            <button class="filtro" data-categoria="remera">Remeras</button>
+            <button class="filtro" data-categoria="pantalon">Pantalones</button>
+            <button class="filtro" data-categoria="buzo">Buzos</button>
+            <button class="filtro" data-categoria="campera">Camperas</button>
+            <button class="filtro" data-categoria="accesorio">Accesorios</button>
+            <button class="filtro" data-categoria="zapatillas">Zapatillas</button>
+        </div>
+
+        <!-- CONTENEDOR DONDE SE MOSTRARÁN LOS PRODUCTOS -->
+        <div id="productos" class="productos-grid"></div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="reseñas">
+        <h2>Reseñas</h2>
+
+        <div class="grid-reseñas">
+            <article class="review">
+                <p>"La mejor calidad, volveré a comprar."</p>
+                <span>— Marcos</span>
+            </article>
+
+            <article class="review">
+                <p>"Las remeras oversize están increíbles."</p>
+                <span>— Sofía</span>
+            </article>
+
+            <article class="review">
+                <p>"Envío rápido y ropa de excelente calidad."</p>
+                <span>— Tomás</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <form action="https://formspree.io/f/xqakrdpj" method="POST">
+            <label>Nombre:
+                <input type="text" name="nombre" required>
+            </label>
+
+            <label>Email:
+                <input type="email" name="email" required>
+            </label>
+
+            <label>Mensaje:
+                <textarea name="mensaje" required></textarea>
+            </label>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 OCN Store • Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- MODAL CARRITO -->
+    <div id="modal-carrito" class="modal oculto">
+        <div class="modal-content">
+            <h2>Tu Carrito</h2>
+
+            <ul id="lista-carrito"></ul>
+
+            <p id="total">Total: $0</p>
+
+            <button id="vaciar-carrito" class="danger">Vaciar carrito</button>
+            <button id="cerrar-carrito">Cerrar</button>
+        </div>
     </div>
-</section>
 
-<section class="filtros">
-    <button class="filtro" data-categoria="todos">Todos</button>
-    <button class="filtro" data-categoria="remera">Remeras</button>
-    <button class="filtro" data-categoria="campera">Camperas</button>
-    <button class="filtro" data-categoria="pantalon">Pantalones</button>
-    <button class="filtro" data-categoria="buzo">Buzos</button>
-    <button class="filtro" data-categoria="accesorio">Accesorios</button>
-    <button class="filtro" data-categoria="zapatillas">Zapatillas</button>
-
-
-</section>
-
-<main id="productos"></main>
-
-<footer>
-    <p>© 2025 Tienda Urbana OCN</p>
-    <div class="social">
-    <a href="https://wa.me/5491165176452/" target="_blank">📱 WhatsApp</a>
-    <a href="https://www.instagram.com/ocn.calzada/" target="_blank">📸 Instagram</a>
-    <a href="https://maps.app.goo.gl/WfR3SJQFrwKDnXmZ6" target="_blank">📍 Ubicación</a>
-    </div>
-</footer>
-
-<!-- Modal del carrito -->
-<div id="modal-carrito" class="modal oculto">
-    <div class="modal-content">
-    <h3>🛒 Tu carrito</h3>
-    <ul id="lista-carrito"></ul>
-    <p id="total">Total: $0</p>
-    <div class="botones-carrito">
-        <button id="vaciar-carrito">Vaciar carrito</button>
-        <button id="cerrar-carrito">Cerrar</button>
-    </div>
-    </div>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
